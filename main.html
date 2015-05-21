@@ -1,0 +1,90 @@
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+  <script src="app.js"></script>
+</script>
+</head>
+<body ng-app="MyApp">
+  <!-- 1. Simple Expression -->
+  <!-- <p>This is your first angular expression: {{ 1 + 2 }}</p> -->
+
+  <!-- 2. Binding a Text Input to an Expression -->
+  <!-- Enter your name: <input type="text" ng-model="name"></input>
+  <p>Hello {{name}}!</p>
+  <p>Hello {{name | uppercase }}!</p> -->
+
+  <!-- 3. Responding to Click Events using Controllers -->
+  <!-- <div ng-controller="MyCtrl">
+    <button ng-click="toggle()">Toggle</button>
+    <p ng-show="visible">Hello World!</p>
+  </div> -->
+
+
+  <!-- 4. Creating Custom HTML Elements with Directives -->
+  <!-- <div>
+   <label for="checkbox">
+     <input id="checkbox" type="checkbox" ng-model="visible">Toggle me
+   </label>
+   <div show="visible">
+     <p>Hello World</p>
+   </div>
+ </div> -->
+
+ <!-- 5. Assigning a Default Value to a Model -->
+  <!-- <div ng-controller="MyCtrl">
+   <p>{{value}}</p>
+ </div> -->
+
+ <!-- 6. Changing a Model Value with a Controller Function -->
+  <!-- <div ng-controller="MyCtrl">
+   <p ng-init="incrementValue(1)">{{value}}</p>
+ </div> -->
+
+ <!-- 7. Encapsulating a Model Value with a Controller Function -->
+  <!-- <div ng-controller="MyCtrl">
+   <p>{{getIncrementedValue()}}</p>
+ </div> -->
+
+ <!-- 8. Responding to Scope Changes -->
+  <!-- <div ng-controller="MyCtrl">
+   <input type="text" ng-model="name" placeholder="Enter your name">
+   <p>{{greeting}}</p>
+ </div> -->
+
+ <!-- 9. Sharing Models Between Nested Controllers -->
+  <!-- <div ng-controller="MyCtrl">
+   <label>Primitive</label>
+   <input type="text" ng-model="name">
+
+   <label>Object</label>
+   <input type="text" ng-model="user.name">
+
+   <div class="nested" ng-controller="MyNestedCtrl">
+     <label>Primitive</label>
+     <input type="text" ng-model="name">
+     <label>Primitive with explicit $parent reference</label>
+     <input type="text" ng-model="$parent.name">
+
+     <label>Object</label>
+     <input type="text" ng-model="user.name">
+   </div>
+ </div> -->
+
+ <!-- 10. Sharing Code Between Controllers using Services -->
+ <!-- <div ng-controller="MyCtrl">
+   <ul ng-repeat="user in users">
+     <li>{{user}}</li>
+   </ul>
+   <div class="nested" ng-controller="AnotherCtrl">
+     First user: {{firstUser}}
+   </div>
+ </div> -->
+
+ <!-- 11. Enabling/Disabling DOM Elements Conditionally -->
+ <!-- <label><input type="checkbox" ng-model="checked"/>Toggle Button</label>
+ <button ng-disabled="checked">Press me</button> -->
+
+ <!-- 12. Changing the DOM in Response to User Actions -->
+ 
+</body>
+</html>
