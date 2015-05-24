@@ -204,23 +204,149 @@ var app = angular.module("MyApp", []);
 // });
 
 /* 24.25. Filtering a List of DOM Nodes */
-app.filter("exclude", function() {
- return function(input, exclude) {
-	 var result = [];
-	 for (var i=0; i<input.length; i++) {
-		 if (input[i] !== exclude) {
-		 	result.push(input[i]);
-		 }
-	 }
+// app.filter("exclude", function() {
+//  return function(input, exclude) {
+// 	 var result = [];
+// 	 for (var i=0; i<input.length; i++) {
+// 		 if (input[i] !== exclude) {
+// 		 	result.push(input[i]);
+// 		 }
+// 	 }
 
-	 return result;
- };
-});
+// 	 return result;
+//  };
+// });
 
-/* 25. Chaining Filters together */
-app.filter("sortAscending", function() {
- return function(input) {
- }
+// /* 25. Chaining Filters together */
+// app.filter("sortAscending", function() {
+//  return function(input) {
+//  }
 
- return result;
-});
+//  return result;
+// });
+ 
+
+// var app = angular.module('MyApp', ['ngResource']);
+
+ /* 25. Requesting JSON Data with AJAX */
+ // app.controller("PostsCtrl", function($scope, $http) {
+	//  $http.get('data/posts.json').
+	//  	success(function(data, status, headers, config) {
+	// 		$scope.posts = data;
+	// 	}).
+	// 	error(function(data, status, headers, config) {
+	// 		// log error
+	// 	});
+ // }); // ?custom http headers
+
+ /* 26. Consuming RESTful APIs - nu merge*/
+//  app.factory("Post", function($resource) {
+// 	return $resource("/api/posts/:id");
+//  });
+
+//  app.controller("PostIndexCtrl", function($scope, Post) {
+// 	Post.query(function(data) {
+// 		$scope.posts = data;
+// 	});
+//  });
+
+// app.controller("PostShowCtrl", function($scope, Post) {
+//  Post.get({ id: 1 }, function(data) {
+//  	$scope.post = data;
+//  });
+// });
+
+//Configuration
+// app.factory("Post", function($resource) {
+//  return $resource("/api/posts/:id", {}, {
+//  	query: { method: "GET", isArray: false }
+//  });
+// });
+
+// app.controller("PostIndexCtrl", function($scope, Post) {
+//  Post.query(function(data) {
+//  	$scope.posts = data.posts;
+//  });
+// });
+
+/* 27. Consuming JSONP APIs - nu merge */
+// var app = angular.module("MyApp", ["ngResource"]);
+
+// function MyCtrl($scope, $resource) {
+// 	var TwitterAPI = $resource("http://search.twitter.com/search.json",
+// 	{ callback: "JSON_CALLBACK" },
+// 	{ get: { method: "JSONP" }});
+
+// 	$scope.search = function() {
+// 		$scope.searchResult = TwitterAPI.get({ q: $scope.searchTerm });
+// 	};
+// }
+
+ /* 28. Deferred and Promise - nu merge */
+ // tmp = [];
+
+ // $http.get("/data/first.json").success(function(data) {
+	//  tmp.push(data);
+	//  $http.get("/data/second.json").success(function(data) {
+	// 	 tmp.push(data);
+	// 	 $http.get("/data/third.json").success(function(data) {
+	// 		 tmp.push(data);
+	// 		 $scope.combinedNestedResult = tmp.join(", ");
+	// 	 });
+	//  });
+ // });
+
+ //versiunea 2
+ // var first = $http.get("/app/data/first.json"),
+ // second = $http.get("/app/data/second.json"),
+ // third = $http.get("/app/data/third.json");
+
+ // $q.all([first, second, third]).then(function(result) {
+	//  var tmp = [];
+	//  angular.forEach(result, function(response) {
+	//  	tmp.push(response.data);
+	//  });
+	//  return tmp;
+ // }).then(function(tmpResult) {
+ // 	$scope.combinedResult = tmpResult.join(", ");
+ // });
+
+ // $scope.startDeferredTimer = function(success) {
+	//  deferredTimer(success).then(
+	// 	 function(data) {
+	// 		 $scope.deferredTimerResult = "Successfully finished: " +
+	// 		 data.message;
+	// 	 },
+	// 	 function(data) {
+	// 	 	$scope.deferredTimerResult = "Failed: " + data.message;
+	// 	 }
+	//  );
+ // };
+
+ /* 29. Client-Side Routing with Hashbang URLs */
+ // var app = angular.module("MyApp", []).config(function($routeProvider, $locationProvider) {
+	//  $locationProvider.hashPrefix('!');
+	//  $routeProvider.
+	// 	 when("/persons",
+	// 	 	{ templateUrl: "partials/person_list.html" }).
+	// 	 when("/persons/:id",
+	//  		{ templateUrl: "partials/person_details.html",
+	//  	 controller: "ShowCtrl" }).
+	//  	 otherwise( { redirectTo: "/persons" });
+ // });
+
+/* 30. Using Regular URLs with the HTML5 History API */
+ // app.config(function($routeProvider, $locationProvider) {
+	//  $locationProvider.html5Mode(true);
+
+	//  $routeProvider.
+	// 	 when("/persons",
+	// 	 	{ templateUrl: "/partials/index.jade",
+	// 	 	controller: "PersonIndexCtrl" }).
+	// 	 when("/persons/:id",
+	// 	 	{ templateUrl: "/partials/show.jade",
+	// 	 	controller: "PersonShowCtrl" }).
+	// 	 otherwise( { redirectTo: "/persons" });
+ // });
+
+/* 31. Using Route Location to Implement a Navigation Menu */

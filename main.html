@@ -3,6 +3,7 @@
   <meta charset='utf-8'>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
   <script src="angular-locale_de.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular-resource.min.js"></script>
   <script src="app.js"></script>
 </script>
 </head>
@@ -121,14 +122,39 @@
   </ul> -->
 
  <!-- 25. Chaining Filters together -->
- <ul ng-init="names = ['Peter', 'Anton', 'John','a','d','x']">
+ <!-- <ul ng-init="names = ['Peter', 'Anton', 'John','a','d','x']">
   <li ng-repeat="name in names | exclude:'Peter' | sortAscending ">
    <span>{{name}}</span>
   </li>
- </ul>
+ </ul> -->
 
+ <!-- 25. Requesting JSON Data with AJAX -->
+ <!-- <div ng-controller="PostsCtrl">
+   <ul ng-repeat="post in posts">
+    <li>{{post.title}}</li>
+   </ul>
+ </div> -->
 
+ <!-- 26. Consuming RESTful APIs -->
 
+ <!-- 27. Consuming JSONP APIs -->
+ <!-- <div ng-controller="MyCtrl">
+  <input type="text" ng-model="searchTerm" placeholder="Search term">
+  <button ng-click="search()">Search</button>
+  <ul ng-repeat="tweet in searchResult.results">
+   <li>{{tweet.text}}</li>
+  </ul>
+ </div> -->
+
+ <!-- 28. Deferred and Promise -->
+
+ <!-- 29. Client-Side Routing with Hashbang URLs -->
+ <!-- <h1>Routing Example</h1>
+ <ng-view></ng-view> -->
+
+ <!-- 30. Using Regular URLs with the HTML5 History API -->
+
+ <!-- 31. Using Route Location to Implement a Navigation Menu -->
 
 
 
