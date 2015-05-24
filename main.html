@@ -1,6 +1,8 @@
 <html>
 <head>
+  <meta charset='utf-8'>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.js"></script>
+  <script src="angular-locale_de.js"></script>
   <script src="app.js"></script>
 </script>
 </head>
@@ -85,6 +87,50 @@
  <button ng-disabled="checked">Press me</button> -->
 
  <!-- 12. Changing the DOM in Response to User Actions -->
- 
+
+ <!-- 19. Repeatedly Rendering Directive’s DOM Node Children -->
+ <!-- <repeat-ntimes repeat="10">
+   <h1>Header 1</h1>
+   <p>This is the paragraph.</p>
+ </repeat-n-times> -->
+
+ <!-- 20. Directive-to-Directive Communication -->
+ <!-- <basket apple orange>Roll over me and check the console!</basket> -->
+
+
+ <!-- 21. Formatting a String With a Currency Filter Problem -->
+ <!-- <input type="text" ng-model="amount" placeholder="Enter amount"/>
+ <p>Default Currency: {{ amount | currency }}</p>
+ <p>Custom Currency: {{ amount | currency: "Euro" }}</p> -->
+
+ <!-- 22. Implementing a Custom Filter to Reverse an Input String -->
+ <!-- <input type="text" ng-model="text" placeholder="Enter text"/>
+ <p>Input: {{ text }}</p>
+ <p>Filtered input: {{ text | reverse }}</p> -->
+
+ <!-- 23. Passing Configuration Params to Filters -->
+ <!-- <input type="text" ng-model="text" placeholder="Enter text"/>
+ <p>Input: {{ text }}</p>
+ <p>Filtered input: {{ text | reverse: { suffix: "!"} }}</p> -->
+
+ <!-- 24. Filtering a List of DOM Nodes -->
+  <!-- <ul ng-init="names = ['Peter', 'Anton', 'John']">
+  <li ng-repeat="name in names | exclude:'Peter' ">
+    <span>{{name}}</span>
+  </li>
+  </ul> -->
+
+ <!-- 25. Chaining Filters together -->
+ <ul ng-init="names = ['Peter', 'Anton', 'John','a','d','x']">
+  <li ng-repeat="name in names | exclude:'Peter' | sortAscending ">
+   <span>{{name}}</span>
+  </li>
+ </ul>
+
+
+
+
+
+
 </body>
 </html>
